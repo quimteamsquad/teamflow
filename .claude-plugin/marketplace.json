@@ -1,0 +1,13 @@
+{
+  "name": "teamflow-plugins",
+  "owner": {
+    "name": "Hector Ros"
+  },
+  "plugins": [
+    {
+      "name": "teamflow",
+      "description": "Spec-driven development workflow with planning, review, and multi-component support",
+      "source": "./"
+    }
+  ]
+}

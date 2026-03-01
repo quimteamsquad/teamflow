@@ -1,0 +1,15 @@
+{
+  "name": "teamflow",
+  "version": "1.0.0",
+  "description": "Spec-driven development workflow with planning, review, and multi-component support",
+  "author": {
+    "name": "Hector Ros",
+    "url": "https://github.com/hectorros"
+  },
+  "homepage": "https://github.com/zeroToOneProjects/teamflow",
+  "license": "MIT",
+  "keywords": [
+    "workflow", "spec-driven", "development", "planning",
+    "code-review", "multi-component", "lifecycle"
+  ]
+}

@@ -1,0 +1,43 @@
+feature:
+  number: "[numero]"
+  title: "[titulo]"
+
+source:
+  type: jira | manual | other
+  id: null
+  url: null
+
+lifecycle:
+  phase: spec  # spec | plan | tasks | implementation | review | done
+
+dates:
+  created: "YYYY-MM-DD"
+  updated: "YYYY-MM-DD"
+  completed: null
+
+tasks_progress:
+  total: 0
+  done: 0
+  in_progress: 0
+  blocked: 0
+  pending: 0
+
+components_affected: []
+
+sessions:
+  - date: "YYYY-MM-DD"
+    phase: spec
+    summary: "[resumen de la sesion]"
+    tasks_completed: []
+
+blockers: []
+  # - task: "T-NNN"
+  #   reason: "[motivo]"
+  #   since: "YYYY-MM-DD"
+
+decisions:
+  - id: "DT-001"
+    title: "[titulo]"
+    decision: "[lo decidido]"
+    rationale: "[por que]"
+    date: "YYYY-MM-DD"
