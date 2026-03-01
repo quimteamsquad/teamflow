@@ -14,7 +14,7 @@ Convierte un spec aprobado en un plan tecnico con decisiones, estructura de camb
 
 ## El Proceso
 
-1. **Leer el spec aprobado.** Abre `.workflow/specs/NNN-feature-name/spec.md`. Verifica que el estado sea `approved`. Si no lo esta, advierte y pregunta si continuar.
+1. **Leer el spec aprobado.** Abre `.workflow/specs/[dominio]/[spec-name]/spec.md`. Verifica que el estado sea `approved`. Si no lo esta, advierte y pregunta si continuar.
 
 2. **Leer contexto del proyecto (solo lo necesario).** Lee:
    - `.workflow/constitution.md` (principios y reglas)
@@ -22,7 +22,7 @@ Convierte un spec aprobado en un plan tecnico con decisiones, estructura de camb
    - **Solo las guidelines de componentes afectados.** Lee `.workflow/platform/components/<componente>.md` solo para los componentes que el feature toca. NUNCA cargues todas las guidelines a la vez.
    - Si una guideline excede ~20KB, lee solo las primeras 50 lineas (TOC/overview) y carga secciones relevantes bajo demanda.
 
-3. **Generar el plan.** Crea `.workflow/specs/NNN-feature-name/plan.md` con:
+3. **Generar el plan.** Crea `.workflow/specs/[dominio]/[spec-name]/plan.md` con:
    - **Componentes afectados** (tags de componente, tipo de cambio)
    - **Investigacion tecnica** (IT-001... hallazgos relevantes)
    - **Decisiones tecnicas** (DT-001... con contexto, opciones evaluadas, decision, rationale)
@@ -31,7 +31,7 @@ Convierte un spec aprobado en un plan tecnico con decisiones, estructura de camb
 
 4. **Constitutional gate check.** Si existe `.workflow/constitution.md`, verifica que cada principio y regla se respete. Documenta la verificacion en el plan.
 
-5. **Validar trazabilidad.** Cada FR-xxx del spec debe estar cubierto por al menos una entrada en la estructura de cambios. Si falta cobertura, corregir.
+5. **Validar trazabilidad.** Cada regla de negocio (R-xxx) del spec debe estar cubierto por al menos una entrada en la estructura de cambios. Si falta cobertura, corregir.
 
 6. **Actualizar estado.** Mueve `state.yaml` a fase `planning`, estado `draft`.
 

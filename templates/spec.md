@@ -1,48 +1,93 @@
-# Spec: [numero] — [titulo]
+# SPEC — [titulo]
 
 | Campo | Valor |
 |-------|-------|
-| Feature | [numero] |
-| Fecha | YYYY-MM-DD |
-| Source | jira / manual / other |
-| Estado | draft / ready / approved |
+| Version | 1.0.0 |
+| Owner | [dominio / equipo] |
+| Scope | [una frase: que determina esta spec] |
+| Estado | draft / approved |
 
 ---
 
-## Contexto y Motivacion
+## 1. Dominio Formal
 
-<!-- Por que existe esta feature. Que problema resuelve. -->
+### 1.1 Inputs
 
-## User Stories
+| Variable | Tipo | Descripcion |
+|----------|------|-------------|
+| [var] | [tipo] | [que representa] |
 
-### US-001: [titulo]
+### 1.2 Constantes del sistema
 
-**Como** [usuario], **quiero** [accion], **para** [beneficio].
+```
+[CONSTANTE] = [valores]
+```
 
-- **Given** [contexto] **When** [accion] **Then** [resultado]
+---
 
-## Requisitos Funcionales
+## 2. Reglas de Negocio (Source of Truth)
 
-| ID | Requisito | Prioridad |
-|--------|-----------|-----------|
-| FR-001 | [descripcion] | must / should / could |
+### R1 — [nombre de la regla]
 
-## Criterios de Exito
+```
+[expresion formal de la regla]
+```
 
-- [ ] SC-001: [metrica verificable]
+### R2 — [nombre]
 
-## Edge Cases
+```
+[expresion formal]
+```
 
-| ID | Caso | Comportamiento esperado |
-|--------|------|------------------------|
-| EC-001 | [descripcion] | [que debe pasar] |
+---
+
+## 3. Invariantes
+
+- [Condicion que SIEMPRE debe cumplirse]
+- [Variable o concepto que NO afecta a esta spec]
+
+---
+
+## 4. Matriz Completa de Estados
+
+| [Input A] | [Input B] | [Output] |
+|-----------|-----------|----------|
+| true | true | [valor] |
+| true | false | [valor] |
+| false | true | [valor] |
+| false | false | [valor] |
+
+No existen mas combinaciones posibles en esta spec.
+
+---
+
+## 5. BDD — Escenarios Exhaustivos
+
+### Scenario: [titulo descriptivo]
+
+Given [contexto]
+And [condicion]
+When [accion]
+Then [resultado esperado]
+
+---
+
+## 6. Contrato API (si aplica)
+
+<!-- Solo si la spec define o modifica un endpoint. Formato OpenAPI simplificado. -->
+
+```yaml
+POST /api/[recurso]:
+  request:
+    [campo]: [tipo]
+  response:
+    [campo]: [tipo]
+  errors:
+    [codigo]: [descripcion]
+```
+
+---
 
 ## Fuera de Alcance
 
 - [Exclusion explicita y por que]
-
-## Glosario
-
-| Termino | Definicion |
-|---------|-----------|
-| [termino] | [definicion] |

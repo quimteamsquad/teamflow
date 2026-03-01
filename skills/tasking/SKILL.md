@@ -14,7 +14,7 @@ Desglosa un plan tecnico aprobado en tareas atomicas, con dependencias, paraleli
 
 ## El Proceso
 
-1. **Leer plan y spec.** Abre `.workflow/specs/NNN-feature-name/plan.md` y `spec.md`. Verifica que el plan este aprobado.
+1. **Leer plan y spec.** Abre `.workflow/specs/[dominio]/[spec-name]/plan.md` y `spec.md`. Verifica que el plan este aprobado.
 
 2. **Desglosar en tareas atomicas.** Cada tarea sigue el formato:
 
@@ -22,7 +22,7 @@ Desglosa un plan tecnico aprobado en tareas atomicas, con dependencias, paraleli
    ### T-001: [titulo descriptivo] [@componente]
    - **Archivos:** lista de archivos a crear/modificar
    - **Depende de:** T-xxx o ninguna
-   - **Acceptance Criteria:** Linked a FR-xxx
+   - **Acceptance Criteria:** Linked a R-xxx (regla de negocio del spec)
      - [ ] [criterio verificable 1]
      - [ ] [criterio verificable 2]
    - **Status:** pending
@@ -33,11 +33,11 @@ Desglosa un plan tecnico aprobado en tareas atomicas, con dependencias, paraleli
    - `<!-- PARALLEL-B -->` antes del grupo B
    - Tareas dentro del mismo grupo pueden ejecutarse simultaneamente.
 
-4. **Validar cobertura.** Cada FR-xxx del spec debe tener al menos una tarea con acceptance criteria vinculado. Lista los FR no cubiertos y crea tareas faltantes.
+4. **Validar cobertura.** Cada regla (R-xxx) del spec debe tener al menos una tarea con acceptance criteria vinculado. Lista los reglas no cubiertas y crea tareas faltantes.
 
 5. **Validar dependencias.** No debe haber ciclos. Si T-003 depende de T-001, y T-001 depende de T-003, hay un error. Resolver reordenando o fusionando.
 
-6. **Crear el archivo.** Escribe `.workflow/specs/NNN-feature-name/tasks.md`.
+6. **Crear el archivo.** Escribe `.workflow/specs/[dominio]/[spec-name]/tasks.md`.
 
 7. **Actualizar estado.** Mueve `state.yaml` a fase `tasking`, estado `draft`.
 
@@ -48,7 +48,7 @@ Busca template en `.workflow/templates/tasks.md`. Si no existe, usa la estructur
 
 ## Errores Comunes
 - Tareas demasiado grandes (>1 commit) — dividir hasta que cada una sea un commit atomico.
-- FR sin tarea asociada — la validacion de cobertura debe detectar esto.
+- Regla de negocio sin tarea asociada — la validacion de cobertura debe detectar esto.
 - Dependencias circulares — siempre verificar el grafo antes de finalizar.
 
 ## Siguiente Paso

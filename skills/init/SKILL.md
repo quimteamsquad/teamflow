@@ -27,7 +27,9 @@ Configura TeamFlow en un proyecto nuevo con una conversacion guiada. Genera la e
    - `.workflow/` parcial — ofrecer completar
    - Guidelines grandes (>20KB) — listar como candidatos a skill: "Estos archivos son grandes. Considera convertirlos a skills con `/create-skill` para mejor manejo de contexto."
 
-5. **Generar estructura:**
+5. **Preguntar dominios de negocio.** "Cuales son los dominios principales de tu proyecto? (ej: auth, payments, compliance, content). Estos organizan tus specs." Si no sabe, sugerir empezar con uno generico y refinar despues.
+
+6. **Generar estructura:**
    ```
    .workflow/
      constitution.md      # Reglas del usuario + principios base
@@ -37,10 +39,11 @@ Configura TeamFlow en un proyecto nuevo con una conversacion guiada. Genera la e
        architecture.md    # Placeholder: "Actualizar tras primer /done"
        decisions.md       # Vacio, listo para ADRs
      templates/           # Copiar templates del plugin
-     specs/               # Directorio para features
+     specs/               # Organizado por dominio de negocio
+       [dominio]/         # Un directorio por dominio (auth/, payments/, etc.)
    ```
 
-6. **Generar/actualizar CLAUDE.md.** Si no existe, crear uno minimo:
+7. **Generar/actualizar CLAUDE.md.** Si no existe, crear uno minimo:
    ```markdown
    # [Nombre del Proyecto]
 
@@ -53,7 +56,7 @@ Configura TeamFlow en un proyecto nuevo con una conversacion guiada. Genera la e
    ```
    Si ya existe, agregar solo la seccion de workflow al final.
 
-7. **Confirmar.** Muestra resumen de lo generado y sugiere: "Proyecto listo. Usa `/spec` para definir tu primer feature."
+8. **Confirmar.** Muestra resumen de lo generado y sugiere: "Proyecto listo. Usa `/spec` para definir tu primer feature."
 
 ## Lo Que NO Hace
 - No pregunta stack tecnologico en detalle (eso va en components.yaml, refinado durante /plan).
