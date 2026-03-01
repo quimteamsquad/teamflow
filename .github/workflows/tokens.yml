@@ -1,0 +1,39 @@
+name: Update token count
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "agents/**"
+      - "commands/**"
+      - "hooks/**"
+      - "templates/**"
+      - "CLAUDE.md"
+      - "scripts/count-tokens.py"
+
+jobs:
+  count:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install tiktoken
+
+      - name: Count tokens and update README
+        run: python scripts/count-tokens.py --update --badge
+
+      - name: Commit if changed
+        run: |
+          git diff --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md scripts/token-badge.svg
+          git commit -m "docs: update token count"
+          git push

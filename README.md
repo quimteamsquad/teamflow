@@ -2,6 +2,10 @@
 
 A Claude Code plugin for spec-driven development. Every feature follows a structured lifecycle: specification, planning, implementation, review, and production -- with all state on disk as Markdown and YAML.
 
+<!-- token-count -->
+**13.1k tokens** - 7% of context window
+<!-- /token-count -->
+
 ## What It Does
 
 TeamFlow gives Claude Code a structured workflow so that no feature gets built without a clear spec, no code ships without review, and no decision gets lost between sessions.
@@ -104,6 +108,22 @@ When initialized, TeamFlow creates this in your project:
     domains/
     components/
 ```
+
+## Context Cost
+
+Installing this plugin adds **~13.1k tokens** to your context window (7% of 200k).
+
+| Component | Files | Tokens |
+|-----------|------:|-------:|
+| skills | 11 | 6,296 |
+| agents | 4 | 3,340 |
+| templates | 7 | 1,737 |
+| commands | 11 | 853 |
+| hooks | 4 | 789 |
+| CLAUDE.md | 1 | 83 |
+| **Total** | **38** | **13,098** |
+
+Measured with [tiktoken](https://github.com/openai/tiktoken) (`cl100k_base`). Updated automatically via CI.
 
 ## Requirements
 
