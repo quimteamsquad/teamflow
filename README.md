@@ -3,7 +3,7 @@
 A Claude Code plugin for spec-driven development. Every feature follows a structured lifecycle: specification, planning, implementation, review, and production -- with all state on disk as Markdown and YAML.
 
 <!-- token-count -->
-**13.1k tokens** - 7% of context window
+**13.6k tokens** - 7% of context window
 <!-- /token-count -->
 
 ## What It Does
