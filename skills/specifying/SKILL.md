@@ -14,8 +14,8 @@ Convierte ideas, tickets o conversaciones en specs formales de reglas de negocio
 
 ## Dos espacios, dos propositos
 
-- **`wip/`** = mesa de trabajo. Aqui viven los archivos del lifecycle (spec, plan, tasks, review, state.yaml) mientras se trabaja en un feature. Es temporal.
-- **`specs/`** = resultado final. Cuando un feature se completa (`/done`), la spec formal se mueve al dominio correspondiente en `specs/`. Es la verdad permanente de reglas de negocio.
+- **`.workflow/wip/`** = mesa de trabajo. Aqui viven TODOS los archivos del lifecycle (spec, plan, tasks, review, state.yaml) mientras se trabaja en un feature. Es temporal. **SIEMPRE crear archivos aqui durante el desarrollo. NUNCA en `specs/`.**
+- **`.workflow/specs/`** = resultado final. Solo se escribe aqui durante `/done`, cuando la spec aprobada se promueve al dominio correspondiente. Es la verdad permanente de reglas de negocio. NUNCA crear specs directamente aqui.
 
 ## Principios
 
